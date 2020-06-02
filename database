@@ -1,11 +1,18 @@
 #postgreSQL
 
 docker pull postgres
+#1
 sudo docker run --name example -e POSTGRES_PASSWORD=demopass1 -d postgres
 sudo docker exec -it example psql -U postgres
+
+#2
+sudo docker run -d -p 5432:5432 --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword postgres
+sudo docker exec -it my-postgres bash
+psql -U postgres
 
 
 #DDL DML
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04
 https://pynative.com/python-postgresql-tutorial/
+https://medium.com/better-programming/connect-from-local-machine-to-postgresql-docker-container-f785f00461a7
 -------------------------------------------------------------------------------------
